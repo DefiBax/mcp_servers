@@ -1,0 +1,13 @@
+name: voice-recorder-mcp
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.10,<3.12
+  - pip
+  - numpy>=1.26.0
+  - pip:
+    - "mcp[cli]>=1.2.0"
+    - "git+https://github.com/openai/whisper.git"
+    - "sounddevice>=0.4.6"
+    - "nltk>=3.8.1"

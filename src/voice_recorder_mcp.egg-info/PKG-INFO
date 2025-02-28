@@ -1,0 +1,110 @@
+Metadata-Version: 2.2
+Name: voice-recorder-mcp
+Version: 0.1.0
+Summary: MCP server for voice recording and transcription
+Requires-Python: <3.12,>=3.10
+Description-Content-Type: text/markdown
+
+# Voice Recorder MCP Server
+
+An MCP server for recording audio and transcribing it using OpenAI's Whisper model. Designed to work as a Goose custom extension.
+
+## Features
+
+- Record audio from the default microphone
+- Transcribe recordings using Whisper
+- Integrates with Goose AI agent as a custom extension
+- Includes prompts for common recording scenarios
+
+## Installation
+
+### Using Conda
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/voice-recorder-mcp.git
+cd voice-recorder-mcp
+
+# Create and activate the conda environment
+conda env create -f environment.yml
+conda activate voice-recorder-mcp
+
+# Install the package
+pip install -e .
+
+## Usage
+
+### As a Standalone MCP Server
+
+```bash
+# Run as a CLI tool
+voice-recorder-mcp
+
+# Use a specific Whisper model
+voice-recorder-mcp --model medium.en
+```
+
+### Testing with MCP Inspector
+
+```bash
+# Run in development mode
+mcp dev src/voice_recorder/server.py
+```
+
+### With Goose AI Agent
+
+1. Open Goose and go to Settings > Extensions > Add
+2. Set the Type to StandardIO
+3. Fill in ID, name, and description for your extension
+4. In the Command field, enter:
+   ```
+   uvx voice-recorder-mcp
+   ```
+   Or for a specific model:
+   ```
+   uvx voice-recorder-mcp --model medium.en
+   ```
+
+## Available Tools
+
+- `start_recording`: Start recording audio from the default microphone
+- `stop_and_transcribe`: Stop recording and transcribe the audio to text
+- `record_and_transcribe`: Record audio for a specified duration and transcribe it
+
+## Available Prompts
+
+- `transcribe_speech`: Basic transcription request
+- `meeting_notes`: Record and organize meeting notes
+- `summarize_recording`: Record and summarize content
+
+## Whisper Models
+
+This extension supports various Whisper model sizes:
+
+- `tiny.en`: Fastest, lowest accuracy (good for testing)
+- `base.en`: Fast with decent accuracy (default)
+- `small.en`: Good balance of speed and accuracy
+- `medium.en`: High accuracy but slower
+- `large`: Highest accuracy but much slower and resource-intensive
+
+## Requirements
+
+- Python 3.10+
+- An audio input device (microphone)
+- Internet connection (for initial model download)
+
+## Troubleshooting
+
+### Common Issues
+
+- **No audio being recorded**: Check your microphone permissions and settings
+- **Model download errors**: Ensure you have a stable internet connection for the initial model download
+- **Integration with Goose**: Make sure the command path is correct and permissions are set properly
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
