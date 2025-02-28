@@ -1,0 +1,2 @@
+[console_scripts]
+voice-recorder-mcp = voice_recorder:main
