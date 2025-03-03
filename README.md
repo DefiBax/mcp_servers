@@ -16,7 +16,6 @@ An MCP server for recording audio and transcribing it using OpenAI's Whisper mod
 git clone https://github.com/DefiBax/voice-recorder-mcp.git
 cd voice-recorder-mcp
 pip install -e .
-pip install git+https://github.com/openai/whisper.git
 ```
 
 ## Usage

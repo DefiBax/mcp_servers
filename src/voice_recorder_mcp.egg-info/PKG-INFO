@@ -9,6 +9,7 @@ License-File: LICENSE
 Requires-Dist: mcp[cli]>=1.2.0
 Requires-Dist: sounddevice>=0.4.6
 Requires-Dist: numpy<2.0.0,>=1.20.0
+Requires-Dist: openai-whisper@ git+https://github.com/openai/whisper.git
 Provides-Extra: dev
 Requires-Dist: pytest>=7.0.0; extra == "dev"
 Requires-Dist: black>=23.0.0; extra == "dev"
@@ -32,9 +33,7 @@ An MCP server for recording audio and transcribing it using OpenAI's Whisper mod
 git clone https://github.com/DefiBax/voice-recorder-mcp.git
 cd voice-recorder-mcp
 pip install -e .
-
-# Or install directly from GitHub
-pip install git+https://github.com/DefiBax/voice-recorder-mcp.git
+pip install git+https://github.com/openai/whisper.git
 ```
 
 ## Usage
@@ -109,7 +108,7 @@ The `.en` suffix indicates models specialized for English, which are faster and 
 
 ## Requirements
 
-- Python 3.10+
+- Python 3.12+
 - An audio input device (microphone)
 
 ## Configuration
