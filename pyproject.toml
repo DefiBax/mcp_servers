@@ -1,13 +1,31 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "voice-recorder-mcp"
 version = "0.1.0"
 description = "MCP server for voice recording and transcription"
 readme = "README.md"
-requires-python = ">=3.10,<3.12"
+license = {text = "MIT"}
+requires-python = ">=3.10,<3.13"  # Allow Python 3.11
+dependencies = [
+    "mcp[cli]>=1.2.0",
+    "sounddevice>=0.4.6",
+    "numpy>=1.20.0,<2.0.0",
+    # Use the GitHub repository version instead of PyPI package
+    # "openai-whisper==20231117",
+    # "numba<0.57"  # Remove this constraint
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+]
 
 [project.scripts]
 voice-recorder-mcp = "voice_recorder:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
