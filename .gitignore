@@ -1,0 +1,4 @@
+.venv
+build
+src/voice_recorder_mcp.egg-info
+.idea

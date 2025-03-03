@@ -1,13 +1,13 @@
+LICENSE
 README.md
 pyproject.toml
-setup.py
 src/voice_recorder/__init__.py
-src/voice_recorder/__main__.py
-src/voice_recorder/recorder.py
+src/voice_recorder/audio_service.py
+src/voice_recorder/config.py
 src/voice_recorder/server.py
-src/voice_recorder/transcriber.py
 src/voice_recorder_mcp.egg-info/PKG-INFO
 src/voice_recorder_mcp.egg-info/SOURCES.txt
 src/voice_recorder_mcp.egg-info/dependency_links.txt
 src/voice_recorder_mcp.egg-info/entry_points.txt
+src/voice_recorder_mcp.egg-info/requires.txt
 src/voice_recorder_mcp.egg-info/top_level.txt
