@@ -51,12 +51,12 @@ npx @modelcontextprotocol/inspector voice-recorder-mcp
 2. Set the name to `voice-recorder`
 3. In the Command field, enter the full path to the voice-recorder-mcp executable:
    ```
-   /full/path/to/voice-recorder-mcp
+   uv run /full/path/to/voice-recorder-mcp
    ```
    
    Or for a specific model:
    ```
-   /full/path/to/voice-recorder-mcp --model medium.en
+   uv run /full/path/to/voice-recorder-mcp --model medium.en
    ```
    
    To find the path, run:
@@ -92,7 +92,7 @@ The `.en` suffix indicates models specialized for English, which are faster and 
 
 - Python 3.12+
 - An audio input device (microphone)
-
+- Portaudio19-dev
 ## Configuration
 
 You can configure the server using environment variables:
@@ -119,7 +119,7 @@ voice-recorder-mcp
 - **Model download errors**: Ensure you have a stable internet connection for the initial model download
 - **Integration with Goose**: Make sure the command path is correct
 - **Audio quality issues**: Try adjusting the sample rate (default: 16000)
-
+- **Failed to start due to audio service**: Need to ensure portfolio19-dev is installed sudo apt-get install portaudio19-dev
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
